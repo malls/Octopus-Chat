@@ -5,17 +5,13 @@ html
     script(src='../socket.io/socket.io.js')
     script(src='https://code.jquery.com/jquery-2.1.0.js')
     script(src='/chat.js')
-    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+    //- link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='chat.css')
   body
     .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
         .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='#') 🐙 Chat
+        h1 🐙 Chat
 
    .jumbotron
       .container
@@ -28,5 +24,3 @@ html
           .container#content.form-control(style='height: 300px; margin: 0 0 20px 0; overflow-y: scroll;')
           .form-group.input-group
             input.control-label.form-control#field(type='text', placeholder='enter text here')
-            .input-group-btn
-              button.btn.btn-primary#send(type='button', value='send') send
