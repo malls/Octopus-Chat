@@ -21,6 +21,9 @@ html
          Example row of columns
       .row
         .col-lg-6
-          .container#content.form-control(style='height: 300px; margin: 0 0 20px 0; overflow-y: scroll;')
+          .container#content
           .form-group.input-group
-            input.control-label.form-control#field(type='text', placeholder='enter text here')
+            input.control-label.form-control#username(type='text', placeholder='what is your name?')
+            input.control-label.form-control#field(type='text', class="hide", placeholder='enter text here')
+            //- button#tweet(type="" class="hide" ).
+            //-   Sign In

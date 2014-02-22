@@ -1,20 +1,22 @@
 window.onload = function() {
-	// $('body').hide();
+	$('button').click(function(e){
+        $(this).addClass(".hide");
+    });
+
     var messages = [];
     var socket = io.connect('http://192.168.1.4:3005');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
-    var username = document.getElementById("username");
+    var username = "";
 
     socket.on('entrance', function  (data) {
-        log_chat_message(data.message, 'system');
+        log_chat_message(data.message, 'system' + username);
     });
 
     socket.on('exit', function  (data) {
         log_chat_message(data.message, 'leave');
     });
-
 
     socket.on('message', function (data) {
         if(data.message) {
@@ -29,31 +31,23 @@ window.onload = function() {
         }
     });
 
-    $('#field').keypress(function (event) {
-        if (event.which == 13) {
-            var text = username + ": " + field.value;
-            socket.emit('send', {message: text});
-        //     fs.writeFile("test.txt", {message: text}, encoding='utf8', function(err) {
-        //     if(err) {
-        //         console.log(err);
-        //     } else {
-        //         console.log("The file was saved!");
-        //     }
-        // });
-            jQuery('#field').val('');
+    $('#username').keypress(function (event) {
+         if (event.which == 13) {
+            username =  this.value;
+            $('#field').show();
+            $('#field').focus();
+            $('#username').hide();
+
         }
     });
 
-//     sendButton.onclick = function() {
-//         var text = username + ": " + field.value;
-//         socket.emit('send', { message: text });
-//         fs.writeFile("test", "Hey there!", function(err) {
-//             if(err) {
-//                 console.log(err);
-//             } else {
-//                 console.log("The file was saved!");
-//             }
-//         });
-//     };
+    $('#field').keypress(function (event) {
+         if (event.which == 13) {
+            text = username + ": " + field.value;
+            socket.emit('send', {message: text});
+            $('#field').val('');
+        }
+    });
+
 
 }
