@@ -22,10 +22,6 @@ app.get("/", function(req, res){
     res.render("page");
 });
 
-app.get("/chat.css", function(req, res){
-    res.render("/tpl/chat.css");
-});
-
 
 app.use(express.static(__dirname + '/public'));
 
