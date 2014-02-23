@@ -6,7 +6,8 @@
         "socket.io": "latest",
         "express": "latest",
         "jade": "latest",
-        "soundclouder": "latest"
+        "soundclouder": "latest",
+        "dotenv": "latest"
     },
     "author": "developer"
 }

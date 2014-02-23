@@ -10,7 +10,7 @@ window.onload = function() {
     var usernames = {};
     
     SC.initialize({
-        client_id: ''
+        client_id: "c597d56a1c6dd9e319d0b6ad5d3cc59f"
     });
 
     SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));

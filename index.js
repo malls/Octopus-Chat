@@ -1,8 +1,12 @@
 var express = require("express");
 var app = express();
 var port = 3005;
-var OAuth= require('oauth').OAuth;
 var io = require('socket.io').listen(app.listen(port));
+var dotenv = require('dotenv');
+var assert = require('assert');
+var env = require('node-env-file');
+
+dotenv.load();
 
 app.set('views', __dirname + '/tpl');
 app.set('view engine', "jade");
