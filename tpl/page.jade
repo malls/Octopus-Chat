@@ -6,33 +6,16 @@ html
     script(src='../socket.io/socket.io.js')
     script(src='https://code.jquery.com/jquery-2.1.0.js')
     script(src='/chat.js')
+    link(rel='stylesheet', href='normalize.css')
+    link(rel='stylesheet', href='grid.css')
     link(rel='stylesheet', href='chat.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
   body
-    .navbar-header
+    .container
     h1 Octopus Chat
-    #mainbody
-    
-        #content.container
-          ul
-        .form-group.input-group
-          input#username.control-label.form-control(type='text', placeholder='what is your name?')
-          input#field.control-label.form-control.hide(type='text', placeholder='chat chat chat')
-        #music.container
-
-
-
-
-
-
-
-
-
-
-  //- #left
-  //-       #player.container
-  //-         p.
-  //-           Jade is a terse and simple
-  //-           templating language with a
-  //-           strong focus on performance
-  //-           and powerful features.fdsa fdsafdsfdsaiofj dklfjdaskl; gdjsaigjdgkldsa
-  //-     #right
+    .column.half
+      #content
+        ul
+      input#username(autocomplete="off", type='text', placeholder='what is your name?')
+      input#field(type='text', placeholder='chat chat chat')
+    #music.column.half

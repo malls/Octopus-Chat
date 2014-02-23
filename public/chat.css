@@ -1,7 +1,28 @@
 *{
 	text-align: center;
 	color: black;
+	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	box-sizing: border-box;
 }
+
+/* Small screens (default) */
+html { font-size: 100%; }
+ 
+/* Medium screens (640px) */
+@media (min-width: 40rem) { 
+  html { font-size: 112%; }
+}
+ 
+/* Large screens (1024px) */
+@media (min-width: 64rem) { 
+  html { font-size: 120%; }
+}
+
+h1{
+	border: 1px solid green;
+}
+
 html{
 	height: 100%;
 	width: 100%;
@@ -11,15 +32,21 @@ html{
 
 body{
 	background-color: #bcefe9;
-	height: 100%;
-	width: 100%;
 	border: 1px solid red;
+}
+
+.container{
+	margin: 0 auto;
+	max-width: 48rem;
+	width: 100%;
+	background-color: red;
 }
 
 #content{
 	background-color: white;
 	width: 100%;
-	height: 300px;
+	min-height: 400px;
+	max-height: 100%;
 	overflow: scroll;
 }
 
@@ -33,29 +60,18 @@ li{
 	list-style-type: none;
 }
 
-#mainbody{
-	width: 100%;
-	
-}
 
-#container{
-	width: 50%;
-	height: 100%;
-
-}
 
 #music{
-	width: 100%;
-	height: 300px;
+	/*width: 100%;
+	height: 300px;*/
 	border: 1px solid yellow;
 }
 
 div{
 	border: 1px solid pink;
-}
+	margin: 0;
 
-.hide{
-	display: none;
 }
 
 

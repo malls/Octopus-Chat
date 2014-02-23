@@ -37,6 +37,8 @@ window.onload = function() {
         }
     });
 
+    $('#field').hide();
+
     $('#username').keypress(function (event) {
          if (event.which == 13) {
             username =  this.value;
@@ -44,8 +46,6 @@ window.onload = function() {
             $('#field').show();
             $('#field').focus();
             $('#username').hide();
-
-
         }
     });
 
