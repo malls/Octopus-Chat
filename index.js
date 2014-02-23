@@ -13,7 +13,7 @@ app.get("/", function(req, res){
     res.render("page");
 });
 
-
+app.use(express.favicon("https://dl.dropboxusercontent.com/u/4746089/octopus.ico")); 
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function (socket) {
