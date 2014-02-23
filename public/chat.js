@@ -43,7 +43,14 @@ window.onload = function() {
             text = username + ": " + field.value;
             socket.emit('send', {message: text});
             $('#field').val('');
-            $(this).attr("placeholder", "");
+            // $(this).attr("placeholder", "");
+        }
+    });
+
+     $('#scbox').keypress(function (event) {
+         if (event.which == 13) {
+            $('#field').focus();
+            $('#scbox').val('');
         }
     });
 
