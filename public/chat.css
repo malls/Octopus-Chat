@@ -75,6 +75,7 @@ h1{
 	overflow: scroll;
 	margin: 0 auto;
 	text-align: left;
+	border-top: 3px solid #0099ff;
 }
 
 input{
@@ -100,7 +101,7 @@ li{
 
 #music{
 	background-color: white;
-	max-height: 100%;
+	max-height: 407px;
 }
 
 .hide{
