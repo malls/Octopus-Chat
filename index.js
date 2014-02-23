@@ -3,8 +3,6 @@ var app = express();
 var port = 3005;
 var OAuth= require('oauth').OAuth;
 var io = require('socket.io').listen(app.listen(port));
-var fs = require('fs');
-var sc = require("soundclouder");
 
 app.set('views', __dirname + '/tpl');
 app.set('view engine', "jade");
@@ -21,7 +19,4 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('message', data);
     });
 });
-
-
-
 

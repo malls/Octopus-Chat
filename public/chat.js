@@ -1,6 +1,7 @@
 window.onload = function() {
-	$('button').click(function(e){
-        $(this).addClass(".hide");
+
+    SC.initialize({
+        client_id: ''
     });
 
     var messages = [];
@@ -9,6 +10,8 @@ window.onload = function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var username = "";
+    var trackid = "";
+    
 
     socket.on('message', function (data) {
         if(data.message) {
@@ -43,12 +46,17 @@ window.onload = function() {
             text = username + ": " + field.value;
             socket.emit('send', {message: text});
             $('#field').val('');
-            // $(this).attr("placeholder", "");
         }
     });
 
      $('#scbox').keypress(function (event) {
          if (event.which == 13) {
+            var track_url = $('#scbox').val();
+            SC.get('/resolve', { url: track_url }, function(track) {
+                trackid = track.id;
+                // console.log(trackid);
+            });
+            // make sure track.id is fetched before trying to add to playlist
             $('#field').focus();
             $('#scbox').val('');
         }
