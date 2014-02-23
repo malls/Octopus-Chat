@@ -6,13 +6,13 @@ window.onload = function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var username = "";
-    var trackid = "";
+    var track_url = "https://soundcloud.com/maindoctrl/ctrl10-luxury-elite-101-7-wave";
     
     SC.initialize({
         client_id: ''
     });
 
-    SC.oEmbed("https://soundcloud.com/maindoctrl/ctrl10-luxury-elite-101-7-wave", {color: "ff0066"},  document.getElementById("scplayer"));
+    SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));
 
     socket.on('message', function (data) {
         if(data.message) {
@@ -50,14 +50,14 @@ window.onload = function() {
         }
     });
 
+    // socket.on('newlink', function(){
+    //     SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));
+    // };
+
      $('#scbox').keypress(function (event) {
-         if (event.which == 13) {
-            var track_url = $('#scbox').val();
-            SC.get('/resolve', { url: track_url }, function(track) {
-                trackid = track.id;
-                SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));
-                // FIX THIS error is like this: http://soundcloud.com/oembed.json?color=ff0066&url=http%3A%2F%2Fsoundcloud.com%2Ftrack%2F50858405 404 (Not Found)
-            });
+        if(event.which == 13) {
+            track_url = $('#scbox').val();
+            SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));
             $('#field').focus();
             $('#scbox').val('');
         }
