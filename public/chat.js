@@ -55,10 +55,9 @@ window.onload = function() {
             var track_url = $('#scbox').val();
             SC.get('/resolve', { url: track_url }, function(track) {
                 trackid = track.id;
-                SC.oEmbed("http://soundcloud.com/track/" + trackid, {color: "ff0066"},  document.getElementById("scplayer"));
+                SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));
                 // FIX THIS error is like this: http://soundcloud.com/oembed.json?color=ff0066&url=http%3A%2F%2Fsoundcloud.com%2Ftrack%2F50858405 404 (Not Found)
             });
-            // make sure track.id is fetched before trying to add to playlist
             $('#field').focus();
             $('#scbox').val('');
         }
