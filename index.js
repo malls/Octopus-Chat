@@ -5,16 +5,6 @@ var OAuth= require('oauth').OAuth;
 var io = require('socket.io').listen(app.listen(port));
 var fs = require('fs');
 
-// var oa = new OAuth(
-// 	"https://api.twitter.com/oauth/request_token",
-// 	"https://api.twitter.com/oauth/access_token",
-// 	"TBBakBuSGjl62kDxU8ImOw",
-// 	"aIh9mrStGYhbty59KdwqhtyRAxsoT6EgnkNzhmlQfg",
-// 	"1.0",
-// 	"http://thethread.pw/auth/twitter/callback",
-// 	"HMAC-SHA1"
-// );
-
 app.set('views', __dirname + '/tpl');
 app.set('view engine', "jade");
 app.engine('jade', require('jade').__express);
@@ -24,6 +14,23 @@ app.get("/", function(req, res){
 
 
 app.use(express.static(__dirname + '/public'));
+
+io.sockets.on('connection', function (socket) {
+    socket.emit('message', { message: 'welcome to the chat' });
+    socket.on('send', function (data) {
+        io.sockets.emit('message', data);
+    });
+});
+
+// var oa = new OAuth(
+// 	"https://api.twitter.com/oauth/request_token",
+// 	"https://api.twitter.com/oauth/access_token",
+// 	"TBBakBuSGjl62kDxU8ImOw",
+// 	"aIh9mrStGYhbty59KdwqhtyRAxsoT6EgnkNzhmlQfg",
+// 	"1.0",
+// 	"http://thethread.pw/auth/twitter/callback",
+// 	"HMAC-SHA1"
+// );
 
 // app.get('/auth/twitter', function(req, res){
 // 	oa.getOAuthRequestToken(function(error, oauth_token, oauth_token_secret, results){
@@ -65,9 +72,4 @@ app.use(express.static(__dirname + '/public'));
 // });
 
 
-io.sockets.on('connection', function (socket) {
-    socket.emit('message', { message: 'welcome to the chat' });
-    socket.on('send', function (data) {
-        io.sockets.emit('message', data);
-    });
-});
+

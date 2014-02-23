@@ -30,6 +30,8 @@ window.onload = function() {
                 html += '<li>' + messages[i] + '</li>';
             }
             content.innerHTML = html;
+            content.scrollTop = content.scrollHeight;
+
         } else {
             console.log("There is a problem:", data);
         }
