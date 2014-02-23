@@ -83,6 +83,13 @@ input{
 /*	border: 1px solid gray;*/
 }
 
+input:focus,textarea:focus,select:focus{
+	-webkit-box-shadow: 2px 2px 0px black;
+  	-moz-box-shadow: 2px 2px 0px black;
+  	box-shadow: 2px 2px 0px black;
+  	outline: none;
+}
+
 li{
 	list-style-type: none;
 }
