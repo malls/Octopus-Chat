@@ -7,33 +7,42 @@
 }
 
 /* Small screens (default) */
-html { font-size: 100%; }
+html { 
+	font-size: 100%; 
+	height: 100%;
+	width: 100%;
+}
+
  
 /* Medium screens (640px) */
-@media (min-width: 40rem) { 
-  html { font-size: 112%; }
+@media (min-width: 640px) { 
+   html {
+   font-size: 112%; 
+	}
+	input {
+		margin-top: 10px;
+	}
+	body{
+		background-color: #bcefe9;
+	}
 }
  
 /* Large screens (1024px) */
-@media (min-width: 64rem) { 
+@media (min-width: 1024px) { 
   html { font-size: 120%; }
 }
 
 h1{
-	border: 1px solid green;
+	background-color: black;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0 auto;
 }
 
-html{
-	height: 100%;
-	width: 100%;
-	border: 1px solid blue;
-}
-
-
-body{
+/*body{
 	background-color: #bcefe9;
-	border: 1px solid red;
-}
+}*/
 
 .container{
 	margin: 0 auto;
@@ -48,12 +57,13 @@ body{
 	min-height: 400px;
 	max-height: 100%;
 	overflow: scroll;
+	margin: 0 auto;
 }
 
 input{
-	margin-top: 10px;
 	width: 100%;
 	height: 40px;
+	border: 1px solid gray;
 }
 
 li{
@@ -63,18 +73,10 @@ li{
 
 
 #music{
-	/*width: 100%;
-	height: 300px;*/
-	border: 1px solid yellow;
-}
-
-div{
-	border: 1px solid pink;
-	margin: 0;
+	background-color: white;
+	height: 300px;
 
 }
-
-
 
 
 

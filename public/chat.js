@@ -10,18 +10,6 @@ window.onload = function() {
     var content = document.getElementById("content");
     var username = "";
 
-    // socket.on('entrance', function  (data) {
-    //     log_chat_message(data.message, 'system' + username);
-    // });
-
-    // socket.on('exit', function  (data) {
-    //     log_chat_message(data.message, 'leave');
-    // });
-
-     socket.on('exit', function  (data) {
-        socket.emit('send', {message: "bye " + username + "!"});
-    });
-
     socket.on('message', function (data) {
         if(data.message) {
             messages.push(data.message);
@@ -38,6 +26,7 @@ window.onload = function() {
     });
 
     $('#field').hide();
+    $('#username').focus();
 
     $('#username').keypress(function (event) {
          if (event.which == 13) {
@@ -54,8 +43,8 @@ window.onload = function() {
             text = username + ": " + field.value;
             socket.emit('send', {message: text});
             $('#field').val('');
+            $(this).attr("placeholder", "");
         }
     });
-
 
 }
