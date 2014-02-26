@@ -6,15 +6,16 @@ window.onload = function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var username = "";
-    var track_url = "https://soundcloud.com/maindoctrl/ctrl10-luxury-elite-101-7-wave";
+    var track_url = "https://soundcloud.com/saintpepsi/cherry-pepsi-1";
     var usernames = {};
     
     SC.initialize({
         client_id: "c597d56a1c6dd9e319d0b6ad5d3cc59f"
     });
 
-    SC.oEmbed(track_url, {color: "ff0066"},  document.getElementById("scplayer"));
-
+    SC.oEmbed(track_url, {auto_play: true},  document.getElementById("scplayer"));
+    //just gonna toss this here: http://developers.soundcloud.com/docs/api/sdks#methods
+    
     socket.on('message', function (data) {
 
         if(data.type === 'chat'){
@@ -36,6 +37,11 @@ window.onload = function() {
             SC.oEmbed(data.message, {color: "ff0066"},  document.getElementById("scplayer"));  
         }
 
+    });
+
+    socket.on('disconnect', function (event) {
+        socket.emit('send', { type: 'chat', message: username + ' disconnected' });
+        //make this work
     });
 
     $('#field').hide();

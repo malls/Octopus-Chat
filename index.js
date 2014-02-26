@@ -15,9 +15,11 @@ app.use(express.favicon("octopus.ico"));
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function (socket) {
-	var track_url = "https://soundcloud.com/maindoctrl/ctrl10-luxury-elite-101-7-wave";
     socket.on('send', function (data) {
         io.sockets.emit('message', data);
     });
-});
+    socket.on('disconnect', function () {
+    io.sockets.emit('user disconnected');
+  });
 
+});
