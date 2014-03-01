@@ -76,7 +76,7 @@ window.onload = function() {
 
             if (field.value === ""){
             }else if(checkIMG(field.value)){
-                text = username + ":<br/> <img src='" + field.value +"' class='chatimg' />";
+                text = username + ": <img src='" + field.value +"' class='chatimg' />";
                 socket.emit('send', { type: 'chat', message: text });
                 $('#field').val('');
             }else if(linkTest.test(field.value)){

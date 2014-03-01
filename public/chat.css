@@ -60,8 +60,10 @@ h1{
 }
 
 .chatimg{
-	max-width: 250px;
-	float: left;
+	max-width: 40%;
+	height: auto;
+	text-align: left;
+
 }
 
 .container{
