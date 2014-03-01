@@ -18,7 +18,7 @@ window.onload = function() {
               '(\\#[-a-z\\d_]*)?$','i'); // fragment locator 
 
     function checkIMG(url) {
-        return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+        return(url.match(/\.(jpeg|jpg|gif|png|ico|bmp)$/) != null);
     };
     
     SC.initialize({
