@@ -86,7 +86,7 @@ window.onload = function() {
                  if (!/^(f|ht)tps?:\/\//i.test(url)) {
                      url = "http://" + url;
                 }
-                text = username + ": <a href='" + url + "'  target="_blank">" + url + "</a>"
+                text = username + ": <a href='" + url + "'  target='_blank'>" + url + "</a>"
                 socket.emit('send', { type: 'chat', message: text });
                 $('#field').val('');
 
