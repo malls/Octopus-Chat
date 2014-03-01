@@ -63,7 +63,10 @@ h1{
 	max-width: 40%;
 	height: auto;
 	text-align: left;
+}
 
+a{
+	target-new: tab;
 }
 
 .container{
