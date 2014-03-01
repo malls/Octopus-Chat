@@ -75,16 +75,18 @@ window.onload = function() {
          if (event.which == 13) {
 
             if (field.value === ""){
+
             }else if(checkIMG(field.value)){
                 text = username + ": <img src='" + field.value +"' class='chatimg' />";
                 socket.emit('send', { type: 'chat', message: text });
                 $('#field').val('');
+
             }else if(linkTest.test(field.value)){
                 var url = field.value;
                  if (!/^(f|ht)tps?:\/\//i.test(url)) {
                      url = "http://" + url;
                 }
-                text = username + ": <a href='" + url + "'>" + url + "</a>"
+                text = username + ": <a href='" + url + "'  target="_blank">" + url + "</a>"
                 socket.emit('send', { type: 'chat', message: text });
                 $('#field').val('');
 
