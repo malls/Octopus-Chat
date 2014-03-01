@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 5000;
+// var port = 3005; keep for local testing
 var io = require('socket.io').listen(app.listen(port));
 
 
