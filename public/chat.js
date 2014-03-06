@@ -8,7 +8,7 @@ window.onload = function() {
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var username = "";
-    var track_url = "https://soundcloud.com/saintpepsi/cherry-pepsi-1";
+    var track_url = "https://soundcloud.com/diors/cherry-blossom";
     var usernames = {};
     var linkTest = new RegExp('^(https?:\\/\\/)?'+ // protocol
               '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
