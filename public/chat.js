@@ -1,9 +1,7 @@
 window.onload = function() {
 
     var messages = [];
-    var socket = io.connect('document.location.host');
-    // var socket = io.connect('http://192.168.1.4:3005/');
-    // keep for local testing
+    var socket = io.connect(document.location.host);
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
