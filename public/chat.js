@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    var messages = [];
+    // var messages = [];
     var socket = io.connect(document.location.host);
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
@@ -21,7 +21,7 @@ window.onload = function() {
     
     SC.initialize({
         client_id: "c597d56a1c6dd9e319d0b6ad5d3cc59f"
-    });
+    });x
 
     SC.oEmbed(track_url, {auto_play: true},  document.getElementById("scplayer"));
     //just gonna toss this here: http://developers.soundcloud.com/docs/api/sdks#methods
@@ -31,7 +31,7 @@ window.onload = function() {
         if(data.type === 'chat'){
 
             if(data.message) {
-                messages.push(data.message);
+                // messages.push(data.message);
                 var html = '';
                 for(var i=0; i<messages.length; i++) {
                     html += '<li>' + messages[i] + '</li>';
