@@ -1,1 +1,1 @@
-SoundCloud based chat app. Currently deployed at octopuschat.herokuapp.com
+SoundCloud based chat app. Currently deployed at http://octopuschat.herokuapp.com
