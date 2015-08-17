@@ -9,8 +9,7 @@
         "socket.io": "latest",
         "express": "3.4.8",
         "jade": "latest",
-        "soundclouder": "latest",
         "dotenv": "latest"
     },
-    "author": "developer"
+    "author": "forrest almasi"
 }

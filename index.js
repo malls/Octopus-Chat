@@ -18,7 +18,6 @@ app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function (socket) {
     socket.on('send', function (data) {
-        console.log('send', data)
         io.sockets.emit('message', data);
     });
     socket.on('disconnect', function (data) {
