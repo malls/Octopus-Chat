@@ -26,10 +26,9 @@ $(document).ready(function() {
     SC.oEmbed(track_url, {
         auto_play: true
     }, document.getElementById('scplayer'));
+    
     socket.on('message', function(data) {
-
         if (data.type === 'chat') {
-
             if (data.message) {
                 messages.push(data.message);
                 var html = '';
@@ -38,8 +37,6 @@ $(document).ready(function() {
                 }
                 content.innerHTML = html;
                 content.scrollTop = content.scrollHeight;
-
-
             } else {
                 console.log('There is a problem:', data);
             }
@@ -48,7 +45,6 @@ $(document).ready(function() {
                 color: 'ff0066'
             }, document.getElementById('scplayer'));
         }
-
     });
 
     socket.on('disconnect', function() {
@@ -121,7 +117,6 @@ $(document).ready(function() {
                 type: 'track',
                 message: track_url
             });
-            console.log(track_url);
             $('#field').focus();
             $('#scbox').val('');
         }
