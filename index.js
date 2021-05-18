@@ -6,14 +6,14 @@ var io = require('socket.io').listen(app.listen(port));
 
 
 app.set('views', __dirname + '/tpl');
-app.set('view engine', "jade");
-app.engine('jade', require('jade').__express);
+app.set('view engine', "pug");
+app.engine('pug', require('pug').__express);
 
 app.get('/', function (req, res) {
     res.render('page');
 });
 
-app.use(express.favicon('octopus.ico'));
+app.use(express.favicon(__dirname + '/public/octopus.ico'));
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('connection', function (socket) {
